@@ -23,8 +23,8 @@ Funktionen und Methodenaufrufe
 Einfache Nutzereingaben verarbeiten
 Strukturierung eines Konsolenprogramms mit Menüführung
 
-Installation:
-# klonen von repo und ausführen
+#Installation:
+klonen von repo und ausführen:
 git clone https://github.com/mateja-rajakovac/MatEjaOS-1.0.git
 cd MatEjaOS-1.0
 python mateja_os.py
