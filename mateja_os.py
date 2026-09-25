@@ -31,7 +31,7 @@ def NICHT_VERSTEHEN():
     print ()
 
 def random_zahl_spiel_erklärung():
-    print ('You need to choose a number between 1-10. The program is going to choose the winning number and if you have chosen that exact number your will win the game.')
+    print ('You need to choose a number between 1-9. The program is going to choose the winning number and if you have chosen that exact number your will win the game.')
 
 def abstand():
     if os.name == "nt":
@@ -88,10 +88,28 @@ def MatEjaOS():
                 abstand()
                 break
             elif wahl == '4':
-                random_zahl_spiel_erklärung()
-                random_zahl_spiel_wahl = input('ENTER A NUMBER:')
+                while True:
+                    abstand()
+                    random_zahl_spiel_erklärung()
+                    guess_number = random.randint(1,9)
+                    try:
+                        user_choice = int(input("Enter your number here:"))
+                    except ValueError:
+                        print ("INVALID USER CHOICE")
+                        time.sleep(1)
+                        continue
+
+                    if user_choice == guess_number:
+                        print ("YOU WIN :)")
+                        time.sleep(1)
+                        abstand()
+                        break
+                    elif user_choice != guess_number:
+                        print ("false...")
+                        time.sleep(0.5)
+                        abstand()
             elif wahl == '5':
-                print ('Closing programe, please wait...')
+                print ('CLOSING PROGRAM...')
                 sys.exit()
             else:
                 abstand()
